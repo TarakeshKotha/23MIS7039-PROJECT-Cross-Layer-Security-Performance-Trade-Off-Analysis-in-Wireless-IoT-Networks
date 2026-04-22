@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\definecolor{myblue}{RGB}{40,110,160}
+\definecolor{bggray}{RGB}{245,245,245}
+\definecolor{gridgray}{RGB}{180,180,180}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+
+% Background
+\fill[bggray] (0,0) rectangle (14,8);
+
+% Axes
+\draw[thick] (1,1) -- (1,7); % Y
+\draw[thick] (1,1) -- (13,1); % X
+
+% Title
+\node[font=\Large\bfseries] at (7,7.5) {Throughput vs Node ID};
+
+% Labels
+\node[rotate=90] at (0.3,4) {Throughput};
+\node at (7,0.3) {Node};
+
+% Y-axis ticks
+\foreach \y/\val in {
+1/0,
+2/500,
+3/1000,
+4/1500,
+5/2000,
+6/2500,
+7/2700
+}{
+\draw (0.9,\y) -- (1.1,\y);
+\node[left] at (0.9,\y) {\val};
+\draw[dashed, gridgray] (1,\y) -- (13,\y);
+}
+
+% X-axis ticks
+\foreach \x in {1,...,12}{
+\node at (\x+1,0.6) {\x};
+\draw (\x+1,0.9) -- (\x+1,1.1);
+}
+
+% Scale
+\def\scale{0.0022}
+
+% Data points
+\coordinate (p1) at (2,{1+20*\scale});
+\coordinate (p2) at (3,{1+22*\scale});
+\coordinate (p3) at (4,{1+21*\scale});
+\coordinate (p4) at (5,{1+23*\scale});
+\coordinate (p5) at (6,{1+22*\scale});
+\coordinate (p6) at (7,{1+24*\scale});
+\coordinate (p7) at (8,{1+23*\scale});
+\coordinate (p8) at (9,{1+22*\scale});
+\coordinate (p9) at (10,{1+21*\scale});
+\coordinate (p10) at (11,{1+23*\scale});
+\coordinate (p11) at (12,{1+25*\scale});
+\coordinate (p12) at (13,{1+2600*\scale});
+
+% Line
+\draw[thick, myblue]
+(p1)--(p2)--(p3)--(p4)--(p5)--(p6)--(p7)--(p8)--(p9)--(p10)--(p11)--(p12);
+
+% Points
+\foreach \p in {p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12}{
+\fill[myblue] (\p) circle (2pt);
+}
+
+\end{tikzpicture}
+\end{center}
+
+\end{document}
