@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    ymin=0, ymax=20,
+    xlabel={Node ID},
+    ylabel={Throughput (kbps)},
+    xtick=data,
+    width=12cm,
+    height=8cm
+]
+\addplot coordinates {
+    (1,18) (2,18) (3,19) (4,18) (5,17)
+    (6,18) (7,18) (8,19) (9,18) (10,18)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

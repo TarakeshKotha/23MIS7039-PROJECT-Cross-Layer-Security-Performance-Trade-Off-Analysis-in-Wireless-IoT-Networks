@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Flow ID},
+    ylabel={Throughput (kbps)},
+    xmin=1, xmax=6,
+    ymin=54, ymax=63,
+    grid=both,
+    width=12cm,
+    height=8cm
+]
+\addplot[mark=o] coordinates {
+    (1,55) (2,58) (3,60) (4,62) (5,59) (6,61)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

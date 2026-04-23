@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    ymin=0, ymax=100,
+    ylabel={Accuracy (\%)},
+    symbolic x coords={Proposed Model, Mustafa et al. (2025), Altalhan et al. (2025)},
+    xtick=data,
+    nodes near coords,
+    bar width=20pt,
+    width=12cm,
+    height=8cm
+]
+\addplot coordinates {
+    (Proposed Model,96)
+    (Mustafa et al. (2025),92)
+    (Altalhan et al. (2025),88)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

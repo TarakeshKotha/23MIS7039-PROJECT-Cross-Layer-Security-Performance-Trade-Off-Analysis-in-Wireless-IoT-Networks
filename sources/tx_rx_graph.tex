@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Flow ID},
+    ylabel={Packets},
+    xmin=1, xmax=6,
+    ymin=135, ymax=205,
+    grid=both,
+    legend pos=north west,
+    width=12cm,
+    height=8cm
+]
+\addplot[mark=o] coordinates {
+    (1,180) (2,185) (3,190) (4,200) (5,195) (6,188)
+};
+\addplot[mark=o] coordinates {
+    (1,140) (2,145) (3,150) (4,160) (5,155) (6,148)
+};
+\legend{Transmitted, Received}
+\end{axis}
+\end{tikzpicture}
+\end{document}

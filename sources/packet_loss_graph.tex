@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Flow ID},
+    ylabel={Packet Loss (\%)},
+    xmin=1, xmax=6,
+    ymin=22, ymax=29,
+    grid=both,
+    width=12cm,
+    height=8cm
+]
+\addplot[mark=o] coordinates {
+    (1,28) (2,26) (3,25) (4,23) (5,24) (6,27)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}

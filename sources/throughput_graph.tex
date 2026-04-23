@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{matblue}{RGB}{31,119,180}
+\definecolor{matorange}{RGB}{255,127,14}
+\definecolor{matgreen}{RGB}{44,160,44}
+\definecolor{matred}{RGB}{214,39,40}
+
+\definecolor{myblue}{RGB}{40,110,160}
+\definecolor{bggray}{RGB}{245,245,245}
+\definecolor{gridgray}{RGB}{180,180,180}
+
+\begin{document}
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.45\textwidth,
+height=5cm,
+xlabel=Flow ID,
+ylabel=Throughput (kbps),
+title=Throughput Analysis,
+grid=major,
+xmin=1, xmax=6,
+ymin=50, ymax=65,
+mark size=2pt
+]
+
+\addplot[
+color=matblue,
+mark=*,
+thick
+] coordinates {
+(1,55) (2,57) (3,58) (4,60) (5,59) (6,62)
+};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Throughput across flows (Python-style visualization).}
+\end{figure}
+\end{center}
+
+\end{document}

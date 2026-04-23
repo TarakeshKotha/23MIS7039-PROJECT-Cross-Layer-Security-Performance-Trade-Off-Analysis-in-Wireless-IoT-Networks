@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    ymin=0, ymax=45,
+    ylabel={Latency (ms)},
+    symbolic x coords={Proposed Model, Musaddiq et al. (2020), Khalil et al. (2024)},
+    xtick=data,
+    nodes near coords,
+    bar width=20pt,
+    width=12cm,
+    height=8cm
+]
+\addplot coordinates {
+    (Proposed Model,30)
+    (Musaddiq et al. (2020),38)
+    (Khalil et al. (2024),40)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}
