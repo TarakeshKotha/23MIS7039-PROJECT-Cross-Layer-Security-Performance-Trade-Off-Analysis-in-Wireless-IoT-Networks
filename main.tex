@@ -718,24 +718,28 @@ Multiple performance metrics are employed to assess the efficacy of a multi-laye
 
 \begin{equation}
 Throughput = \frac{Total\ Received\ Data}{Simulation\ Time}
+\label{eq:throughput}
 \end{equation}
 
 \textbf{Packet Delivery Ratio (PDR):} Packet Delivery Ratio measures the reliability of the network by comparing the number of packets successfully received at the destination with the number of packets transmitted by the source nodes.
 
 \begin{equation}
 PDR = \frac{Packets_{Received}}{Packets_{Sent}}
+\label{eq:pdr}
 \end{equation}
 
 \textbf{Packet Loss Ratio:} Packet loss ratio indicates the proportion of packets that fail to reach the destination due to interference, congestion, or security filtering mechanisms.
 
 \begin{equation}
 PLR = \frac{Packets_{Lost}}{Packets_{Sent}}
+\label{eq:plr}
 \end{equation}
 
 \textbf{Latency:} Latency measures the time delay experienced during packet transmission from the source node to the destination node. Lower latency indicates better communication performance.
 
 \begin{equation}
 Latency = T_{receive} - T_{send}
+\label{eq:latency}
 \end{equation}
 
 \textbf{Energy Consumption:} Energy consumption represents the amount of power used by IoT nodes during data transmission, reception, and security processing operations.
@@ -783,7 +787,10 @@ Several crucial criteria are evaluated, including throughput, packet delivery ra
 
 \noindent\includegraphics[width=0.45\textwidth]{figures/throughput_graph.png}
 
+
+
 The throughput results indicate that the proposed cross-layer framework maintains stable communication performance across different traffic flows, with values ranging between 55 kbps and 62 kbps. A slight increase is observed at higher flows due to packet aggregation and efficient routing decisions. This demonstrates that the proposed system effectively handles increased traffic without significant performance degradation, ensuring reliable data transmission in wireless IoT environments.
+As shown in Figure the throughput is computed using Equation (\ref{eq:throughput}).
 
 \vspace{3mm}
 
@@ -791,7 +798,7 @@ The throughput results indicate that the proposed cross-layer framework maintain
 
 \noindent\includegraphics[width=0.45\textwidth]{figures/pdr_graph.png}
 
-The packet delivery ratio remains within the range of 0.72 to 0.78 across most flows, indicating high communication reliability. Minor variations are observed under higher load conditions due to network congestion. The results confirm that the integration of lightweight authentication and adaptive routing mechanisms improves packet delivery efficiency compared to conventional approaches.
+The packet delivery ratio remains within the range of 0.72 to 0.78 across most flows, indicating high communication reliability. Minor variations are observed under higher load conditions due to network congestion. The results confirm that the integration of lightweight authentication and adaptive routing mechanisms improves packet delivery efficiency compared to conventional approaches (\ref{eq:pdr}).
 
 \vspace{3mm}
 
@@ -799,7 +806,7 @@ The packet delivery ratio remains within the range of 0.72 to 0.78 across most f
 
 \noindent\includegraphics[width=0.45\textwidth]{figures/packet_loss_graph.png}
 
-The packet loss ratio varies between 23\% and 28\%, with slightly higher loss observed during peak traffic conditions. The proposed framework effectively reduces packet loss by combining cross-layer monitoring and adaptive routing strategies. This indicates improved congestion handling and better utilization of network resources in comparison to traditional IoT communication models.
+The packet loss ratio varies between 23\% and 28\%, with slightly higher loss observed during peak traffic conditions. The proposed framework effectively reduces packet loss by combining cross-layer monitoring and adaptive routing strategies. This indicates improved congestion handling and better utilization of network resources in comparison to traditional IoT communication models (\ref{eq:plr})..
 
 \vspace{3mm}
 
@@ -807,7 +814,7 @@ The packet loss ratio varies between 23\% and 28\%, with slightly higher loss ob
 
 \noindent\includegraphics[width=0.45\textwidth]{figures/tx_rx_graph.png}
 
-The transmission versus reception graph shows a consistent difference between transmitted and received packets due to interference and channel conditions. However, the gap remains controlled, indicating efficient packet forwarding and minimal data loss. This validates the effectiveness of the proposed routing and security mechanisms in maintaining communication reliability.
+The transmission versus reception graph shows a consistent difference between transmitted and received packets due to interference and channel conditions. However, the gap remains controlled, indicating efficient packet forwarding and minimal data loss. This validates the effectiveness of the proposed routing and security mechanisms in maintaining communication reliability.(\ref{eq:pdr}).
 
 \vspace{3mm}
 
@@ -816,6 +823,7 @@ The transmission versus reception graph shows a consistent difference between tr
 \noindent\includegraphics[width=0.45\textwidth]{figures/throughput_distribution.png}
 
 The throughput distribution across nodes remains consistent at approximately 18 kbps, indicating uniform load balancing and efficient resource utilization. Minimal variation between nodes demonstrates that the proposed framework ensures fairness in data transmission across the network.
+(\ref{eq:throughput_phase3}).
 
 \vspace{3mm}
 
@@ -824,6 +832,7 @@ The throughput distribution across nodes remains consistent at approximately 18 
 \noindent\includegraphics[width=0.45\textwidth]{figures/reliability_pdr.png}
 
 The reliability values remain in the range of 0.72 to 0.78 across different flows, confirming stable network performance under varying conditions. This highlights the effectiveness of the proposed cross-layer design in maintaining high reliability while managing network dynamics.
+(\ref{eq:plr}).
 
 \vspace{5mm}
 
@@ -832,6 +841,7 @@ The reliability values remain in the range of 0.72 to 0.78 across different flow
 \noindent\includegraphics[width=0.45\textwidth]{figures/throughput_comparison.png}
 
 The proposed model achieves a throughput of approximately 60 kbps, significantly outperforming existing approaches such as \cite{mustafa2024framework} and \cite{khalil2024connectivity}, which report throughput values in the range of 16–18 kbps. This improvement is attributed to efficient cross-layer coordination and optimized routing mechanisms that enhance data transmission efficiency.
+(\ref{eq:rec}).
 
 \vspace{3mm}
 
